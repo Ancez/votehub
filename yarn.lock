@@ -1409,6 +1409,11 @@ onetime@^5.1.0:
   dependencies:
     mimic-fn "^2.1.0"
 
+openmoji@^13.1.0:
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/openmoji/-/openmoji-13.1.0.tgz#ef69730f1efcc65d70871aa518e1517c6a7232c7"
+  integrity sha512-rOY6DKqnCPCU9D8lu/SK1cMVQjiBsiJRT4be+GV+WXPcd1os6AKWKtfGWhz0oIWhTrUB8WbLG72IkTt7l3h6Qw==
+
 parent-module@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/parent-module/-/parent-module-1.0.1.tgz#691d2709e78c79fae3a156622452d00762caaaa2"

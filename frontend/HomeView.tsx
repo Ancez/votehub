@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Redirect } from "react-router-dom"
 import { votehub } from "canisters/votehub"
+import { Header } from "./components/Header"
 
 export function HomeView() {
   const [redirectToRoom, setRedirectToRoom] = useState<boolean>(false);
@@ -14,14 +15,17 @@ export function HomeView() {
   }
 
   return (
-    <div className="h-full">
-      <div className="max-w-7xl mx-auto text-center sm:px-6 lg:px-8 py-6 m-8">
-        <h1 className="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Votehub</h1>
-        <p>The voting station</p>
-        <input type="text" onChange={(input) => { setRoomName(input.currentTarget.value) }} />
-        <button className="bg-red-500" onClick={createRoom}>
-          Create Room
-        </button>
+    <div className="h-full bg-gray-800 flex flex-col justify-center items-center">
+      <Header></Header>
+
+      <div className="my-4">
+        <div className="relative border border-indigo-600 text-white rounded-md px-3 py-2 shadow-sm focus-within:border-gray-600">
+          <label className="absolute -top-2 left-2 -mt-px inline-block bg-gray-800 px-1 text-xs font-medium">Your room name</label>
+          <input type="text"
+                 onChange={(input) => { setRoomName(input.currentTarget.value) }}
+                 className="block w-full bg-gray-800 outline-none sm:text-sm" />
+        </div>
+        <button onClick={createRoom} className="w-full mt-4 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700">Create Room</button>
       </div>
 
       { redirectToRoom && <Redirect to={'/room/' + roomName} />}
